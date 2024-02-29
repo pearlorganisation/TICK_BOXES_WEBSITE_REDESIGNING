@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import BuildingImg from "../../../assets/buildingImg.jpg";
+import OfficeImg from "../../../assets/officeImg.jpg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,7 +22,7 @@ export default function HomePageCarousel() {
           .map(() => {
             return (
               <SwiperSlide className="">
-                <img src={BuildingImg} className="h-[80vh] object-cover w-full object-center "/>
+                <img src={OfficeImg} className="h-[80vh] object-cover w-full object-center "/>
               </SwiperSlide>
             );
           })}

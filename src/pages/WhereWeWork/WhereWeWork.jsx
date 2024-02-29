@@ -1,7 +1,7 @@
 // ------------------------------------------------Imports--------------------------------------------------
 import React from "react";
 import WhereWeWorkCard from "../../components/Cards/WhereWeWorkCard/WhereWeWorkCard";
-import { whereWeWorkImages } from "../../assets/whereWeWorkImages";
+import { whereWeWorkImages } from "../../assets/WhereWeWorkImages/whereWeWorkImages";
 // ----------------------------------------------------------------------------------------------------------
 
 const WhereWeWork = () => {

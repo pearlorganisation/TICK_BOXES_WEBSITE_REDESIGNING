@@ -8,6 +8,7 @@ import Header from "./components/common/Header/Header";
 import ContactUs from "./components/ContactUs/ContactUs";
 import Services from "./pages/Services/Services";
 import WhereWeWork from "./pages/WhereWeWork/WhereWeWork";
+import AboutUs from "./pages/AboutUs/AboutUs";
 // -------------------------------------------------------------------------------------------------------
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/services" element={<Services />} />
         <Route path="/where-we-work" element={<WhereWeWork />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
     </div>
   );
