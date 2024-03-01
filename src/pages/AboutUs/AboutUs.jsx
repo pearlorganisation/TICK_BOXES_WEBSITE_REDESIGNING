@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const [state, setState] = useState(false);
@@ -80,15 +81,15 @@ const AboutUs = () => {
         <section>
           <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
             <div className="flex-none space-y-5 max-w-xl">
-              <a
-                href="javascript:void(0)"
+              <Link
+                to="/where-we-work"
                 className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white"
               >
                 <span className="inline-block rounded-full px-3 py-1 bg-indigo-600 text-white">
-                  News
+                  Also
                 </span>
                 <p className="flex items-center">
-                  Read the launch post from here
+                  Checkout Where We Work
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
@@ -102,38 +103,47 @@ const AboutUs = () => {
                     />
                   </svg>
                 </p>
-              </a>
+              </Link>
               <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl">
-                Build your SaaS exactly how you want
+                Introducing Tick Boxes
               </h1>
               <p>
-                Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-                doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+                In the dynamic landscape of modern business, where eﬃciency and
+                adaptability are paramount, housing societies are now embracing
+                smarter ways of management. Just as businesses outsource their
+                tasks for streamlined operations, ‘ Tick Boxes ' emerges as the
+                solution for Housing Societies, alleviating them from tedious
+                tasks. Born out of this evolving scenario, ‘ Tick Boxes' is more
+                than a concept it's a solution tailored to reduce the burden on
+                Housing Societies. Our expertise, honed by managing numerous
+                societies, allows us to provide skilled assistance, streamlining
+                operations according to your society's unique needs.
               </p>
+              <h3 className="text-xl font-bold text-black">
+                Key Features -
+              </h3>
+              <div className="keyFeaturesTag mt-1 flex gap-2 flex-wrap">
+                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                  Flexible Offerings
+                </span>
+                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                  Expert Assistance
+                </span>
+                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                  Customized Services
+                </span>
+                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                  Comprehensive Support
+                </span>
+                
+              </div>
+
               <div className="flex items-center gap-x-3 sm:text-sm">
                 <a
                   href="javascript:void(0)"
                   className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
                 >
                   Get started
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="javascript:void(0)"
-                  className="flex items-center justify-center gap-x-1 py-2 px-4 text-gray-700 hover:text-gray-900 font-medium duration-150 md:inline-flex"
-                >
-                  Contact sales
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"

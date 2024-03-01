@@ -68,6 +68,7 @@ function TestimonialCarousel() {
                 society={test.society}
                 img={test.img}
                 designation={test.designation}
+                desc={test.desc}
               />
             </div>
           );
