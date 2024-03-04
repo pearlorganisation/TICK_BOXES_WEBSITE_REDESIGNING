@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TestimonialCard from "../../Cards/TestimonialCard/TestimonialCard";
 import { testimonialImages } from "../../../assets/TestimonialImages/testimonialImages";
+import "./TestimonialCarousel.css"
 // -------------------------------------------------------------------------------------------------------
 
 function TestimonialCarousel() {
@@ -54,6 +55,26 @@ function TestimonialCarousel() {
     slidesToScroll: 1,
     speed: 500,
     dots: true,
+    responsive: [
+      {
+        // tablet
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "60px",
+        },
+      },
+      {
+        // mobile portrait
+        breakpoint: 479,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: "60px",
+        },
+      },
+    ],
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };

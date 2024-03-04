@@ -2,6 +2,7 @@
 import React from "react";
 import WhereWeWorkCard from "../../components/Cards/WhereWeWorkCard/WhereWeWorkCard";
 import { whereWeWorkImages } from "../../assets/WhereWeWorkImages/whereWeWorkImages";
+import buildingImg from "../../assets/buildingImg.jpg";
 // ----------------------------------------------------------------------------------------------------------
 
 const WhereWeWork = () => {
@@ -9,8 +10,11 @@ const WhereWeWork = () => {
     <>
       <div className="topContent">
         <div
-          className="w-[100%] flex flex-col text-center bg-blue-700 p-20"
-          style={{ clipPath: "circle(790px at top)" }}
+          className="w-[100%] flex flex-col text-center p-20 bg-bottom"
+          style={{
+            clipPath: "circle(790px at top)",
+            backgroundImage: `url(${buildingImg})`,
+          }}
         >
           <p className="text-4xl text-white font-bold">
             We are trusted by many
