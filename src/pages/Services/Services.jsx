@@ -1,77 +1,238 @@
-import React from "react";
+// ---------------------------------------------------Imports-------------------------------------------
+import React, { useEffect } from "react";
+import ServiceCard from "../../components/Services/ServiceCard/ServiceCard";
+import SubContentWrapper from "../../components/Services/SubContentWrapper/SubContentWrapper";
+// ------------------------------------------------------------------------------------------------------
 
 const Services = () => {
-  const ServiceCard = () => {
-    return (
-      <div className="serviceCard w-[20%] h-[620px] border border-gray-300 border-b-0 p-8 overflow-hidden">
-        <p className="title font-bold text-2xl">Premium</p>
-        <p className="desc">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus
-          consectetur possimus cumque repudiandae quam nam eaque fugiat, odio
-          earum ut?
-        </p>
-        <div className="pricing mt-5">
-          <p>Starts at</p>
-          <p className="text-3xl text-gray-500 line-through"> &#8377;23000</p>
-          <p className="text-4xl text-black "> &#8377;11000</p>
-          <p className="text-md text-black "> /month for 12 months*</p>
-        </div>
-        <div className="buyNowBtn w-[100%]">
-          <button className="border w-[100%] border-black text-center bg-yellow-300 p-3 rounded-full mt-3">
-            Buy Now
-          </button>
-        </div>
-        <p className="t&c text-[13px] mt-3">
-          *SeeOffer Terms Overages apply if contact or email send limit is
-          exceeded. Learn more
-        </p>
-        <div className="subContent w-[100%]"></div>
-      </div>
-    );
-  };
+  // ---------------------------------------------------states--------------------------------------------
+  const subContentData = [
+    {
+      d1: "Society Manager",
+      d2: "Part-time Monthly Once",
+      d3: "Part-time Monthly Once",
+      d4: "Part-time Weekly Once",
+      d5: "Part-time Weekly Once",
+      d6: "Full time Society Manager",
+    },
+    {
+      d1: "Maintenance of Statutory Record",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Banking Transactions to be done by manager",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Preparation of vouchers and cheques",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Record Keeping and Filing",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Coordination with Auditor",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Keeping Track of Annual Renewal",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Keeping Track of Fixed Deposits",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Keeping Track of Leave and license",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Drafting minutes of MC/AGM/SGM Meetings",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Drafting of Notice, Circulars, NOC",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Member Document Management",
+      d2: "Yes",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Coordination with Society Lawyer",
+      d2: "No",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Maintenance of Society Property",
+      d2: "No",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Liason with BMC & Registrar",
+      d2: "No",
+      d3: "Yes",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Manage, Monitor & Resolve Complaints of Member",
+      d2: "No",
+      d3: "No",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Prepare Database of Local Vendor",
+      d2: "No",
+      d3: "No",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Conduct Election of the Society",
+      d2: "No",
+      d3: "No",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Attend AGM / SGM Meetings",
+      d2: "No",
+      d3: "No",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+    {
+      d1: "Attend Managing Committee Meetings",
+      d2: "No",
+      d3: "No",
+      d4: "No",
+      d5: "No",
+      d6: "Yes",
+    },
+    {
+      d1: "Get 3 Quotes for Any Work",
+      d2: "No",
+      d3: "No",
+      d4: "No",
+      d5: "No",
+      d6: "Yes",
+    },
+    {
+      d1: "Verification of Flat Transfer Document from Legal Team",
+      d2: "No",
+      d3: "No",
+      d4: "No",
+      d5: "No",
+      d6: "Yes",
+    },
+    {
+      d1: "Budgeting",
+      d2: "No",
+      d3: "No",
+      d4: "No",
+      d5: "No",
+      d6: "Yes",
+    },
+    {
+      d1: "On call member support",
+      d2: "No",
+      d3: "No",
+      d4: "No",
+      d5: "No",
+      d6: "Yes",
+    },
+  ];
 
-  const SubContentCard = ({ index }) => {
-    return (
-      <div
-        className={`subContentCard w-[20%] pl-10 pr-10 pt-2 pb-2 border border-t-0 border-l-gray-300 ${
-          index % 2 == 0 ? "bg-gray-200" : "bg-white"
-        }`}
-      >
-        <p className="text-[14px]">No additional cost add on</p>
-      </div>
-    );
-  };
-
-  const SubContentWrapper = ({ index }) => {
-    return (
-      <div className="subContentWrapper w-[100%] flex">
-        <div
-          className={`subContentCard w-[20%] pl-10 pr-10 pt-2 pb-2 underline  ${
-            index % 2 == 0 ? "bg-gray-200" : "bg-white"
-          }`}
-        >
-          <p>Generative AI Features</p>
-        </div>
-        {Array(4)
-          .fill(0)
-          .map(() => {
-            return <SubContentCard index={index} />;
-          })}
-      </div>
-    );
-  };
+  const serviceCardData = [
+    {
+    title:"Virtual Manager"
+  },
+    {
+    title:"Silver"
+  },
+    {
+    title:"Gold"
+  },
+    {
+    title:"Platinum"
+  },
+    {
+    title:"Diamond"
+  },
+]
+  // ------------------------------------------------------------------------------------------------------
+  // ---------------------------------------------------useEffect-----------------------------------------
+  // useEffect(() => {}, [window.pageYOffset]);
+  // ------------------------------------------------------------------------------------------------------
 
   return (
     <div className="servicesContainer w-[100%] p-10">
-      <div className="servicesMain p-10 2-[100%]">
-        <div className="servicesCardWrapper w-[100%] flex">
-          <div className="serviceCard w-[20%] h-[620px] p-10 flex flex-col justify-center">
+      <div className="servicesMain p-5 2-[100%]">
+        <div className="servicesCardWrapper min-w-[1100px] flex sticky top-0 bg-white">
+          <div className="serviceCard w-[20%] p-10 flex flex-col justify-center ">
             <p className="title font-bold text-2xl">
               Not sure which plan is for you?
             </p>
-            <p className="desc mt-4">
+            <p className="desc mt-4 line-clamp-1 sm:line-clamp-2 md:line-clamp-none">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Doloribus
             </p>
             <div className="buyNowBtn w-[100%]">
               <button className="border w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3">
@@ -79,17 +240,15 @@ const Services = () => {
               </button>
             </div>
           </div>
-          {Array(4)
-            .fill(0)
-            .map(() => {
-              return <ServiceCard />;
+          {serviceCardData
+            .map((_, index) => {
+              return <ServiceCard index={index} serviceData={_} />;
             })}
         </div>
-        {Array(5)
-          .fill(0)
-          .map((_, index) => {
-            return <SubContentWrapper index={index} />;
-          })}
+        <p className="mt-3 mb-3 font-bold text-xl">Society Management</p>
+        {subContentData.map((_, index) => {
+          return <SubContentWrapper index={index} subData={_} />;
+        })}
       </div>
     </div>
   );
