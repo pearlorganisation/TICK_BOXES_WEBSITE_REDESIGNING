@@ -3,7 +3,7 @@ import React from "react";
 const TestimonialCard = ({ name, img, society, designation, desc }) => {
   return (
     <div>
-      <div class="lg:col-span-2 xl:col-auto p-5 h-[20rem] w-[30rem] sm:h-[30rem] ">
+      <div class="lg:col-span-2 xl:col-auto p-5 h-[20rem] w-[30rem] sm:h-[30rem]">
         <div class="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
           <p class="leading-normal text-sm sm:text-xl">{desc || "hasidh asjhdqi qowhn qowh  oqhw qwohd oqhwd qosja "}</p>
           <div class="flex items-center mt-8 space-x-3">

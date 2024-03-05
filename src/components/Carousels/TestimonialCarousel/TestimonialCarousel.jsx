@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TestimonialCard from "../../Cards/TestimonialCard/TestimonialCard";
 import { testimonialImages } from "../../../assets/TestimonialImages/testimonialImages";
-import "./TestimonialCarousel.css"
+import "./TestimonialCarousel.css";
 // -------------------------------------------------------------------------------------------------------
 
 function TestimonialCarousel() {
