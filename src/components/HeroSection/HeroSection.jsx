@@ -1,5 +1,6 @@
 // --------------------------------------------------Imports----------------------------------------------
 import { useState } from "react";
+import { Link } from "react-router-dom";
 // --------------------------------------------------------------------------------------------------------
 
 const HeroSection = () => {
@@ -82,8 +83,8 @@ const HeroSection = () => {
             doloremque laudantium, totam rem aperiam, eaque ipsa quae.
           </p>
           <div className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0 xl:justify-start">
-            <a
-              href="javascript:void(0)"
+            <Link
+              to="/services"
               className="flex items-center justify-center gap-x-2 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg md:inline-flex"
             >
               Get Started
@@ -99,7 +100,7 @@ const HeroSection = () => {
                   clipRule="evenodd"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="flex-1 max-w-xl mx-auto mt-14 xl:mt-0">
@@ -151,7 +152,7 @@ const HeroSection = () => {
               autoPlay={true}
             >
               <source
-                src="https://vod-progressive.akamaized.net/exp=1708776271~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1237%2F16%2F406187011%2F1739831782.mp4~hmac=f6b00ea561e3276357a643bbe693682c90243cb20efb0a4206b73edbf20f4f8c/vimeo-prod-skyfire-std-us/01/1237/16/406187011/1739831782.mp4"
+                src="https://tickboxes.in/tick-vid.mp4"
                 type="video/mp4"
               />
             </video>

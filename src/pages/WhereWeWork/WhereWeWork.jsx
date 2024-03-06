@@ -32,6 +32,7 @@ const WhereWeWork = () => {
                   image={val.img}
                   title={val.title}
                   desc={val.desc}
+                  members={val.members}
                 />
               );
             })}

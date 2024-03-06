@@ -201,23 +201,114 @@ const Services = () => {
     },
   ];
 
+  const subContentData2 = [
+    {
+      d1: "1 Level Escalation",
+      d2: "No",
+      d3: "No",
+      d4: "Yes",
+      d5: "Yes",
+      d6: "Yes",
+    },
+  ];
+  const subContentData3 = [
+    {
+      d1: "Supervisor monthly visit",
+      d2: "1",
+      d3: "1",
+      d4: "1",
+      d5: "1",
+      d6: "2",
+    },
+  ];
+
+  const subContentData4 = [
+    {
+      d1: "Society Maintenance Bill Generation - Quarterly",
+      d2: "Society",
+      d3: "Society",
+      d4: "Society",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "Physical Maintenance Bill To Members",
+      d2: "Society",
+      d3: "Society",
+      d4: "Society",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "Finalisation of Accounts",
+      d2: "Society",
+      d3: "Society",
+      d4: "Society",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+  ];
+
+  const subContentData5 = [
+    {
+      d1: "Auditing",
+      d2: "TickBoxes",
+      d3: "TickBoxes",
+      d4: "TickBoxes",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "Audit Report",
+      d2: "TickBoxes",
+      d3: "TickBoxes",
+      d4: "TickBoxes",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "Income Tax Filing",
+      d2: "TickBoxes",
+      d3: "TickBoxes",
+      d4: "TickBoxes",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "TDS Return Filing",
+      d2: "TickBoxes",
+      d3: "TickBoxes",
+      d4: "TickBoxes",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+    {
+      d1: "GST Return Filing",
+      d2: "TickBoxes",
+      d3: "TickBoxes",
+      d4: "TickBoxes",
+      d5: "TickBoxes",
+      d6: "TickBoxes",
+    },
+  ];
+
   const serviceCardData = [
     {
-    title:"Virtual Manager"
-  },
+      title: "Virtual Manager",
+    },
     {
-    title:"Silver"
-  },
+      title: "Silver",
+    },
     {
-    title:"Gold"
-  },
+      title: "Gold",
+    },
     {
-    title:"Platinum"
-  },
+      title: "Platinum",
+    },
     {
-    title:"Diamond"
-  },
-]
+      title: "Diamond",
+    },
+  ];
   // ------------------------------------------------------------------------------------------------------
   // ---------------------------------------------------useEffect-----------------------------------------
   // useEffect(() => {}, [window.pageYOffset]);
@@ -226,8 +317,8 @@ const Services = () => {
   return (
     <div className="servicesContainer w-[100%] p-10">
       <div className="servicesMain p-5 2-[100%]">
-        <div className="servicesCardWrapper min-w-[1100px] flex sticky top-0 bg-white">
-          <div className="serviceCard w-[20%] p-10 flex flex-col justify-center ">
+        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-0 bg-white">
+          <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
             <p className="title font-bold text-2xl">
               Not sure which plan is for you?
             </p>
@@ -240,14 +331,29 @@ const Services = () => {
               </button>
             </div>
           </div>
-          {serviceCardData
-            .map((_, index) => {
-              return <ServiceCard index={index} serviceData={_} />;
-            })}
+          {serviceCardData.map((_, index) => {
+            return <ServiceCard index={index} serviceData={_} />;
+          })}
         </div>
         <p className="mt-3 mb-3 font-bold text-xl">Society Management</p>
         {subContentData.map((_, index) => {
-          return <SubContentWrapper index={index} subData={_} />;
+          return <SubContentWrapper index={index} subData={_} first={true} />;
+        })}
+        <p className="mt-3 mb-3 font-bold text-xl">Escalation Matrix</p>
+        {subContentData2.map((_, index) => {
+          return <SubContentWrapper index={index} subData={_} first={false} />;
+        })}
+        <p className="mt-3 mb-3 font-bold text-xl">Supervision</p>
+        {subContentData3.map((_, index) => {
+          return <SubContentWrapper index={index} subData={_} first={false} />;
+        })}
+        <p className="mt-3 mb-3 font-bold text-xl">Financial Management</p>
+        {subContentData4.map((_, index) => {
+          return <SubContentWrapper index={index} subData={_} first={false} />;
+        })}
+        <p className="mt-3 mb-3 font-bold text-xl">Statutory Requirements</p>
+        {subContentData5.map((_, index) => {
+          return <SubContentWrapper index={index} subData={_} first={false} />;
         })}
       </div>
     </div>
