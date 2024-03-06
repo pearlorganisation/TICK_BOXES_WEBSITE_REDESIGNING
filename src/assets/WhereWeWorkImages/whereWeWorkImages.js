@@ -17,55 +17,76 @@ export const whereWeWorkImages = [
     title: "Aakanksha Tower",
     desc: "Andheri West, Mumbai",
     img: whereWeWorkImg1,
+    members: "dummy"
   },
   {
     title: "Midori C Wing",
     desc: "Dahisar East, Mumbai",
     img: whereWeWorkImg2,
+    members: "168"
+
   },
   {
     title: "Sun Moon",
     desc: "Borivali East",
     img: whereWeWorkImg3,
+    members: "32"
+
   },
   {
     title: "Royal status",
     desc: "Dadar East",
     img: whereWeWorkImg4,
+    members: "dummy"
+
   },
   {
     title: "RNA Continental",
     desc: "Chembur, Mumbai",
     img: whereWeWorkImg5,
+    members: "208"
+
   },
   {
     title: "Midori B Wing",
     desc: "Dahisar East, Mumbai",
     img: whereWeWorkImg6,
+    members: "141"
+
   },
   {
     title: "Kalanagar",
     desc: "Bandra East",
     img: whereWeWorkImg7,
+    members: "38"
+
   },
   {
     title: "Chintamani Plaza",
     desc: "Dahisar East, Mumbai",
     img: whereWeWorkImg8,
+    members: "33"
+
   },
   {
     title: "Balaji Infotech",
     desc: "Thane, Mumbai",
     img: whereWeWorkImg9,
+    members: "10"
+
   },
   {
     title: "Anchorage",
     desc: "Chembur, Mumbai",
     img: whereWeWorkImg10,
+    members: "10"
+
   },
   {
     title: "Amrita Prive",
     desc: "Chembur, Mumbai",
     img: whereWeWorkImg11,
+    members: "dummy"
+
   },
 ];

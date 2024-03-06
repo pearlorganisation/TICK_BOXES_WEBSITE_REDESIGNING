@@ -2,10 +2,10 @@ import React from "react";
 
 const ServiceCard = ({ serviceData }) => {
   return (
-    <div className="serviceCard w-[20%] border border-gray-300 border-b-0 p-8 overflow-hidden">
-      <p className="title font-bold text-2xl ">{serviceData.title}</p>
+    <div className="serviceCard w-[14%] border border-gray-300 border-b-0 p-8 overflow-hidden">
+      <p className="title font-bold text-[15px] sm:text-[15px] md:text-[15px]">{serviceData.title}</p>
       <div className="serviceCardContent">
-        <p className="desc line-clamp-1 sm:line-clamp-2 md:line-clamp-none">
+        <p className="desc line-clamp-1 sm:line-clamp-2 md:line-clamp-none text-sm">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. ipsum dolor
           sit
         </p>
