@@ -295,18 +295,23 @@ const Services = () => {
   const serviceCardData = [
     {
       title: "Virtual Manager",
+      duration:"Part-time Monthly Once"
     },
     {
       title: "Silver",
+      duration:"Part-time Monthly Once"
     },
     {
       title: "Gold",
+      duration:"Part-time Weekly Once"
     },
     {
       title: "Platinum",
+      duration:"Part-time Weekly Once"
     },
     {
       title: "Diamond",
+      duration:"Full time Society Manager"
     },
   ];
   // ------------------------------------------------------------------------------------------------------
@@ -317,7 +322,7 @@ const Services = () => {
   return (
     <div className="servicesContainer w-[100%] p-10">
       <div className="servicesMain p-5 2-[100%]">
-        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-0 bg-white">
+        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-0 bg-gradient-to-r from-teal-400 to-yellow-200">
           <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
             <p className="title font-bold text-2xl">
               Not sure which plan is for you?

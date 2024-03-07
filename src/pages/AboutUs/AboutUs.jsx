@@ -139,8 +139,8 @@ const AboutUs = () => {
               </div>
 
               <div className="flex items-center gap-x-3 sm:text-sm">
-                <a
-                  href="javascript:void(0)"
+                <Link
+                to="/about-us/details"
                   className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex"
                 >
                   Get started
@@ -156,7 +156,7 @@ const AboutUs = () => {
                       clipRule="evenodd"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
             <div className="flex-1 hidden md:block">
