@@ -9,6 +9,7 @@ import ContactUs from "./components/ContactUs/ContactUs";
 import Services from "./pages/Services/Services";
 import WhereWeWork from "./pages/WhereWeWork/WhereWeWork";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import Details from "./pages/Details/Details";
 // -------------------------------------------------------------------------------------------------------
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/where-we-work" element={<WhereWeWork />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/about-us/details" element={<Details />} />
       </Routes>
     </div>
   );

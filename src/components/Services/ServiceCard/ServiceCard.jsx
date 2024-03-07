@@ -1,26 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ serviceData }) => {
   return (
-    <div className="serviceCard w-[14%] border border-gray-300 border-b-0 p-8 overflow-hidden">
-      <p className="title font-bold text-[15px] sm:text-[15px] md:text-[15px]">{serviceData.title}</p>
+    <div className="serviceCard w-[14%] border border-green-300 border-b-0 p-8 overflow-hidden flex flex-col items-center justify-center">
+      <p className="title font-bold text-[15px] sm:text-[15px] md:text-[15px]">
+        {serviceData.title}
+      </p>
       <div className="serviceCardContent">
-        <p className="desc line-clamp-1 sm:line-clamp-2 md:line-clamp-none text-sm">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. ipsum dolor
-          sit
-        </p>
-        <div className="pricing mt-5">
-          <p>Starts at</p>
-          <p className="text-3xl text-gray-500 line-through"> &#8377;23000</p>
-          <p className="text-4xl text-black "> &#8377;11000</p>
-          <p className="text-md text-black "> /month for 12 months*</p>
-        </div>
         <div className="buyNowBtn w-[100%]">
-          <button className="border w-[100%] border-black text-center bg-yellow-300 p-3 rounded-full mt-3">
-            Buy Now
+          <button className="w-[100%]  text-center bg-yellow-300 p-3 rounded-full mt-3 hover:font-bold border border-black hover:text-red-500 hover:border-red-500 hover:border-[2px] ">
+            <Link to="https://wa.me/7777051052">Enquiry</Link>
           </button>
         </div>
       </div>
+      <p className="text-center mt-4 italic font-bold text-2sm">
+        {serviceData.duration}
+      </p>
     </div>
   );
 };
