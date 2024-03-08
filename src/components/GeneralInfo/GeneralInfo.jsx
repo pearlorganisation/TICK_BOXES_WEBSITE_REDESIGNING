@@ -40,8 +40,8 @@ const GeneralInfo = () => {
           {icon}
         </div>
         <div className="rightInfo p-3">
-          <h1 className="md:text-2xl sm:text-2xl text-3xl font-bold text-center md:text-start">{title}</h1>
-          <h4 className="md:text-xl sm:text-xl text-xl text-center md:text-start">{desc}</h4>
+          <h1 className="md:text-2xl sm:text-2xl text-3xl font-bold text-center md:text-start bg-gradient-to-r from-[#EA4021] via-[#F5D103] to-[#71B744] text-transparent bg-clip-text">{title}</h1>
+          <h4 className="md:text-xl sm:text-xl text-xl text-center md:text-start bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text  font-extrabold text-transparent">{desc}</h4>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ const GeneralInfo = () => {
   // -----------------------------------------------------------------------------------------------------
 
   return (
-    <div className="w-full bg-gradient-to-r from-gray-200 grid sm:grid-cols-3 p-10 ">
+    <div className="w-full bg-fuchsia-300/30 grid sm:grid-cols-3 py-16 ">
       {generalInfoObj.map((info) => {
         return (
           <GeneralInfoCard

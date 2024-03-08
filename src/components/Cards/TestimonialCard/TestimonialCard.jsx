@@ -1,25 +1,28 @@
 import React from "react";
+import styles from "./style.module.css"
 
 const TestimonialCard = ({ name, img, society, designation, desc }) => {
   return (
-    <div>
-      <div class="lg:col-span-2 xl:col-auto p-5 h-[20rem] w-[30rem] sm:h-[30rem]">
-        <div class="flex flex-col justify-between w-full h-full px-6 py-6 bg-gray-100 dark:bg-gray-800 md:px-14 rounded-2xl md:py-14 dark:bg-trueGray-800">
-          <p class="leading-normal text-sm sm:text-xl">{desc || "hasidh asjhdqi qowhn qowh  oqhw qwohd oqhwd qosja "}</p>
-          <div class="flex items-center mt-8 space-x-3">
-            <div class="flex-shrink-0 overflow-hidden rounded-full w-14 h-14 border border-gray-300 cursor-pointer hover:scale-[3] transition-all duration-1000 ">
-              <img alt="Avatar" src={img} loading="lazy" />
-            </div>
-            <div>
-              <div class="text-lg font-medium">{name}</div>
-              <div class="text-gray-600 dark:text-gray-400">
-                <p>
-                  {society} ({designation})
-                </p>
-              </div>
-            </div>
-          </div>
+    <div
+      class={`${styles.cardContainer} m-10 max-w-sm mx-auto block rounded-lg bg-gradient-to-r from-orange-500 to-rose-500 p-[2px]`}
+    >
+      <div class="rounded-lg border bg-white px-4 pt-8 pb-10 shadow-lg backdrop-blur-sm ">
+        <div class="relative mx-auto  h-[8rem] bg-pink-400 overflow-hidden w-[8rem] rounded-full">
+          <img
+            class=" h-full w-full object-cover object-right"
+            src={img}
+            alt=""
+          />
         </div>
+        <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">
+          {name}
+        </h1>
+        <h3 class="font-lg text-semibold text-center leading-6 text-gray-600">
+          {designation}
+        </h3>
+        <p class="text-center text-sm leading-6 text-gray-500 hover:text-gray-600 line-clamp-5">
+          {desc}
+        </p>
       </div>
     </div>
   );
