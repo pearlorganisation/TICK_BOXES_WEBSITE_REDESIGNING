@@ -1,10 +1,11 @@
 import React from "react";
 import TestimonialCard from "../Cards/TestimonialCard/TestimonialCard";
 import TestimonialCarousel from "../Carousels/TestimonialCarousel/TestimonialCarousel";
+import styles from './style.module.css'
 
 const Testimonials = () => {
   return (
-    <div class="pb-5">
+    <div class={`pb-5 ${styles.bgImage}`}>
       <div class="container flex flex-col items-center justify-center w-full p-6 mx-auto mt-4 text-center xl:px-0">
         <div class="text-sm font-bold tracking-wider text-indigo-600 uppercase">
           Testimonials

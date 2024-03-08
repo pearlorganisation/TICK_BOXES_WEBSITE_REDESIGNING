@@ -1,6 +1,8 @@
 // --------------------------------------------------Imports----------------------------------------------
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import videoImg from "../../assets/videoImg.jpeg";
+import styles from './style.module.css'
 // --------------------------------------------------------------------------------------------------------
 
 const HeroSection = () => {
@@ -61,7 +63,8 @@ const HeroSection = () => {
   const [isVideoPoppedUp, setVideoPopUp] = useState(false);
 
   return (
-    <section className="min-h-[91.5vh] grid place-items-center bg-gradient-to-l from-indigo-100 ">
+    <section className={`min-h-[91.5vh] grid place-items-center  relative ${styles.bgImage}`}>
+     
       <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 xl:flex min-h-[30rem]">
         <div className="space-y-8 max-w-2xl mx-auto text-center xl:text-left">
           <div className="flex flex-wrap items-center justify-center gap-6 xl:justify-start">
@@ -75,10 +78,10 @@ const HeroSection = () => {
               </div>
             ))}
           </div>
-          <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
+          <span className="text-4xl bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text  font-extrabold text-transparent mx-auto md:text-5xl ">
             Simplify Your society Management
-          </h1>
-          <p className="max-w-xl mx-auto xl:mx-0">
+          </span>
+          <p className="max-w-xl mx-auto xl:mx-0 ">
             Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
             doloremque laudantium, totam rem aperiam, eaque ipsa quae.
           </p>
@@ -105,11 +108,7 @@ const HeroSection = () => {
         </div>
         <div className="flex-1 max-w-xl mx-auto mt-14 xl:mt-0">
           <div className="relative">
-            <img
-              src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-              className="rounded-lg w-full h-full"
-              alt=""
-            />
+            <img src={videoImg} className="rounded-lg w-full h-full" alt="" />
             <button
               className="absolute w-16 h-16 rounded-full inset-0 m-auto duration-150 bg-blue-500 hover:bg-blue-600 ring-offset-2 focus:ring text-white"
               onClick={() => setVideoPopUp(true)}

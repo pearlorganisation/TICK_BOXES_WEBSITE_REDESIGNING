@@ -88,6 +88,6 @@ export const testimonialImages = [
     society: "Chembur, Mumbai",
     img: testImg11,
     designation: "Chairman",
-    desc: "",
+    desc: "Kudos to the team at Tick Boxes for their outstanding services. The transparency in financial reporting, prompt dispute resolution, and user-friendly interface have made a notable difference in the way our community functions. Thank you for your dedication!",
   },
 ];

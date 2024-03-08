@@ -18,12 +18,12 @@ const Header = () => {
 
   return (
     <>
-      <nav className="bg-white border-b w-full md:static md:text-sm md:border-none">
+      <nav className="!sticky top-0 z-10 bg-gray-300/80 backdrop-blur-md w-full md:static md:text-sm ">
         <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">
           <div className="flex items-center justify-between md:block py-1">
-            <a href="javascript:void(0)">
-              <img src={Logo} width={140} height={80} alt="Float UI logo" />
-            </a>
+            <Link to="/">
+              <img src={Logo} width={140} height={80} className="text-white" alt="Float UI logo" />
+            </Link>
             <div className="md:hidden">
               <button
                 className="text-gray-500 hover:text-gray-800"
@@ -69,7 +69,7 @@ const Header = () => {
             <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
               {navigation.map((item, idx) => {
                 return (
-                  <li key={idx} className="text-gray-700 hover:text-indigo-600">
+                  <li key={idx} className=" hover:text-indigo-600 bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text  font-extrabold font-madimi text-transparent tracking-[3px] text-[16px]">
                     <Link to={item.path} className="block">
                       {item.title}
                     </Link>

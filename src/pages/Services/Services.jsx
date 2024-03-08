@@ -322,7 +322,7 @@ const Services = () => {
   return (
     <div className="servicesContainer w-[100%] p-10">
       <div className="servicesMain p-5 2-[100%]">
-        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-0 bg-gradient-to-r from-teal-400 to-yellow-200">
+        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-20 bg-gradient-to-r from-violet-200 to-pink-200">
           <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
             <p className="title font-bold text-2xl">
               Not sure which plan is for you?
@@ -332,7 +332,7 @@ const Services = () => {
             </p>
             <div className="buyNowBtn w-[100%]">
               <button className="border w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3">
-                Find my plan
+                Our Plans
               </button>
             </div>
           </div>
