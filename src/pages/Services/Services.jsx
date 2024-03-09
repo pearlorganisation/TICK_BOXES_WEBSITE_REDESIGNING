@@ -9,7 +9,7 @@ const Services = () => {
   const subContentData = [
     {
       d1: "Society Manager",
-      d2: "Part-time Monthly Once",
+      d2: "Part-Time Monthly Once",
       d3: "Part-time Monthly Once",
       d4: "Part-time Weekly Once",
       d5: "Part-time Weekly Once",
@@ -295,23 +295,23 @@ const Services = () => {
   const serviceCardData = [
     {
       title: "Virtual Manager",
-      duration:"Part-time Monthly Once"
+      duration:"Part-Time Monthly Once"
     },
     {
       title: "Silver",
-      duration:"Part-time Monthly Once"
+      duration:"Part-Time Monthly Once"
     },
     {
       title: "Gold",
-      duration:"Part-time Weekly Once"
+      duration:"Part-Time Weekly Once"
     },
     {
       title: "Platinum",
-      duration:"Part-time Weekly Once"
+      duration:"Part-Time Weekly Once"
     },
     {
       title: "Diamond",
-      duration:"Full time Society Manager"
+      duration:"Full Time Society Manager"
     },
   ];
   // ------------------------------------------------------------------------------------------------------
