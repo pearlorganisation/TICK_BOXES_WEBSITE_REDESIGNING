@@ -321,7 +321,7 @@ const Services = () => {
 
   return (
     <div className="servicesContainer w-[100%] p-10">
-      <div className="servicesMain p-5 2-[100%]">
+      <div className="servicesMain p-5 w-[100%]">
         <div className="servicesCardWrapper min-w-[1300px] flex sticky top-20 bg-gradient-to-r from-violet-200 to-pink-200">
           <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
             <p className="title font-bold text-2xl">

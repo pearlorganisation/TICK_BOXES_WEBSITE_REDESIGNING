@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div class="pt-8">
+    <div class="p-8">
       <div class="max-w-6xl mx-auto bg-[#2e0249] rounded-lg">
         <div class="grid md:grid-cols-2 items-center gap-16 sm:p-10 p-4 font-[sans-serif]">
           <div>
@@ -26,7 +26,7 @@ const ContactUs = () => {
                   />
                 </svg>
                 <a href="javascript:void(0)" class="text-white text-sm ml-3">
-                  <strong>puja@tickboxes.in</strong>
+                  <strong className="text-lg">puja@tickboxes.in</strong>
                 </a>
               </li>
               <li class="flex items-center">
@@ -43,7 +43,7 @@ const ContactUs = () => {
                   ></path>
                 </svg>
                 <a href="javascript:void(0)" class="text-white text-sm ml-3">
-                  <strong>+91 7777 051 052</strong>
+                  <strong className="text-lg">+91 7777 051 052</strong>
                 </a>
               </li>
               <li class="flex items-center">
@@ -64,7 +64,7 @@ const ContactUs = () => {
                   ></path>
                 </svg>
                 <a href="javascript:void(0)" class="text-white text-sm ml-3">
-                  <strong>Andheri West, Mumbai</strong>
+                  <strong className="text-lg">Andheri West, Mumbai</strong>
                 </a>
               </li>
             </ul>
