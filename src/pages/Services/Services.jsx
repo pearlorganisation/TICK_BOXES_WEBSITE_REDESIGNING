@@ -10,10 +10,10 @@ const Services = () => {
     {
       d1: "Society Manager",
       d2: "Part-Time Monthly Once",
-      d3: "Part-time Monthly Once",
-      d4: "Part-time Weekly Once",
-      d5: "Part-time Weekly Once",
-      d6: "Full time Society Manager",
+      d3: "Part-Time Monthly Once",
+      d4: "Part-Time Weekly Once",
+      d5: "Part-Time Weekly Once",
+      d6: "Full Time Society Manager",
     },
     {
       d1: "Maintenance of Statutory Record",
