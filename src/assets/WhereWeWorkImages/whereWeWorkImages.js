@@ -16,6 +16,7 @@ import whereWeWorkImg14 from "./whereWeWorkImg14.jpg";
 import whereWeWorkImg15 from "./whereWeWorkImg15.jpg";
 import whereWeWorkImg16 from "./whereWeWorkImg16.jpg";
 import whereWeWorkImg17 from "./whereWeWorkImg17.jpg";
+import whereWeWorkImg18 from "./whereWeWorkImg18.jpg";
 // -----------------------------------------------------------------------------------------------------------
 
 export const whereWeWorkImages = [
@@ -124,7 +125,7 @@ export const whereWeWorkImages = [
   {
     title: "Cosmos Plaza",
     desc: "Andheri West",
-    img: whereWeWorkImg17,
+    img: whereWeWorkImg18,
     members: "38",
   },
 ];
