@@ -5,7 +5,7 @@ import viteLogo from "/vite.svg";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Header from "./components/common/Header/Header";
-import ContactUs from "./components/ContactUs/ContactUs";
+import ContactUs from "./pages/ContactUs/ContactUs";
 import Services from "./pages/Services/Services";
 import WhereWeWork from "./pages/WhereWeWork/WhereWeWork";
 import AboutUs from "./pages/AboutUs/AboutUs";
