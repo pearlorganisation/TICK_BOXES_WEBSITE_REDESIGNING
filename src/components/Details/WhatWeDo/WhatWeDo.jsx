@@ -104,7 +104,7 @@ const WhatWeDo = () => {
         <p className="text-white text-7xl font-bold italic">What We Do?</p>
       </section>
       <div className="whatWeDoContentContainer ">
-        <div className="whatWeDoContentWrapper grid grid-cols-3 place-content-center gap-4  p-5 bg-gradient-to-r from-slate-500 to-slate-800">
+        <div className="whatWeDoContentWrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 place-content-center gap-6  p-14 bg-gradient-to-r from-slate-400 to-slate-600">
           {whatWeDoData.map((data) => {
             return (
               <WhatWeDoCard

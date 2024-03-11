@@ -295,23 +295,23 @@ const Services = () => {
   const serviceCardData = [
     {
       title: "Virtual Manager",
-      duration:"Part-Time Monthly Once"
+      duration: "Part-Time Monthly Once",
     },
     {
       title: "Silver",
-      duration:"Part-Time Monthly Once"
+      duration: "Part-Time Monthly Once",
     },
     {
       title: "Gold",
-      duration:"Part-Time Weekly Once"
+      duration: "Part-Time Weekly Once",
     },
     {
       title: "Platinum",
-      duration:"Part-Time Weekly Once"
+      duration: "Part-Time Weekly Once",
     },
     {
       title: "Diamond",
-      duration:"Full Time Society Manager"
+      duration: "Full Time Society Manager",
     },
   ];
   // ------------------------------------------------------------------------------------------------------
@@ -320,26 +320,26 @@ const Services = () => {
   // ------------------------------------------------------------------------------------------------------
 
   return (
-    <div className="servicesContainer w-[100%] p-10">
-      <div className="servicesMain p-5 w-[100%]">
-        <div className="servicesCardWrapper min-w-[1300px] flex sticky top-20 bg-gradient-to-r from-violet-200 to-pink-200">
-          <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
-            <p className="title font-bold text-2xl">
-              Not sure which plan is for you?
-            </p>
-            <p className="desc mt-4 line-clamp-1 sm:line-clamp-2 md:line-clamp-none">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            </p>
-            <div className="buyNowBtn w-[100%]">
-              <button className="border w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3">
-                Our Plans
-              </button>
+    <div className="servicesContainer w-screen p-10">
+      <div className="servicesMain w-[100%]">
+        <div className="w-[100%] sticky top-20">
+          <div className="servicesCardWrapper w-[100%]  flex bg-gradient-to-r from-violet-200 to-pink-200">
+            <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
+              <p className="title font-bold text-2xl">
+                Not sure which plan is for you?
+              </p>
+              <div className="buyNowBtn w-[100%]">
+                <button className="border w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3">
+                  Our Plans
+                </button>
+              </div>
             </div>
+            {serviceCardData.map((_, index) => {
+              return <ServiceCard index={index} serviceData={_} />;
+            })}
           </div>
-          {serviceCardData.map((_, index) => {
-            return <ServiceCard index={index} serviceData={_} />;
-          })}
         </div>
+
         <p className="mt-3 mb-3 font-bold text-xl">Society Management</p>
         {subContentData.map((_, index) => {
           return <SubContentWrapper index={index} subData={_} first={true} />;
