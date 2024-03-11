@@ -9,7 +9,7 @@ const SubContentCard = ({ index, idx, subData, first }) => {
         index % 2 == 0 ? "bg-gray-200" : "bg-white"
       }`}
     >
-      <p className="text-[14px]">{subData[`d${idx + 2}`]}</p>
+      <p className="text-[14px] text-center">{subData[`d${idx + 2}`]}</p>
     </div>
   );
 };

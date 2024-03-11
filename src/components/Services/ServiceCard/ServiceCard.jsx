@@ -1,9 +1,11 @@
+// --------------------------------------------------Imports----------------------------------------------
 import React from "react";
 import { Link } from "react-router-dom";
+// -------------------------------------------------------------------------------------------------------
 
 const ServiceCard = ({ serviceData }) => {
   return (
-    <div className="serviceCard w-[14%] border border-green-300 border-b-0 p-8 overflow-hidden flex flex-col items-center justify-center">
+    <div className="serviceCard w-[14%] border border-green-300 border-b-0 p-8 flex flex-col items-center justify-center">
       <p className="title font-bold text-[15px] sm:text-[15px] md:text-[15px]">
         {serviceData.title}
       </p>
