@@ -1,76 +1,108 @@
 // ----------------------------------------------Imports------------------------------------------
 import React from "react";
 import build3Img from "../../../assets/build3.jpg";
+import "./styles.css";
+import { GrUserManager } from "react-icons/gr";
+import { MdOutlineLibraryBooks, MdQueryStats } from "react-icons/md";
+import { LuCalculator } from "react-icons/lu";
+import { BsCashCoin } from "react-icons/bs";
+import { HiClipboardDocument } from "react-icons/hi2";
+import { LuTimer } from "react-icons/lu";
+import { FaHeadphones, FaUserGroup } from "react-icons/fa6";
+import { SiMlflow } from "react-icons/si";
+
 // -----------------------------------------------------------------------------------------------
 
 const PowerfulFeatures = () => {
   // -------------------------------------------functions---------------------------------------------
   const powerfulFeaturesData = [
     {
-      title: "Dedicated Managers to Ease Honorary Role Burdens",
+      title: "Skilled Society Manager",
+      desc: "",
+      icon: <GrUserManager size={50} />,
     },
     {
-      title: "We handled Statutory and Clerical Tasks",
+      title: "Statutory Record Management",
+      desc: "",
+      icon: <MdOutlineLibraryBooks size={50} />,
+    },
+    {
+      title: "Maintain Financial Record",
+      desc: "",
+      icon: <LuCalculator size={50} />,
+    },
+    {
+      title: "Cost-Effective Service",
+      desc: "",
+      icon: <BsCashCoin size={50} />,
+    },
+    {
+      title: "Maintain Society Record",
+      desc: "",
+      icon: <HiClipboardDocument size={50} />,
+    },
+    {
+      title: "Tracking of Pending Dues",
+      desc: "",
+      icon: <LuTimer size={50} />,
+    },
+    {
+      title: "Tracking of Members' Complaints",
+      desc: "",
+      icon: <MdQueryStats size={50} />,
+    },
+    {
+      title: "Coordination with External Agency",
+      desc: "",
+      icon: <SiMlflow size={50} />,
+    },
+    {
+      title: "Reduce Burden on Managing Committee (MC)",
+      desc: "",
+      icon: <FaUserGroup size={50} />,
     },
     {
       title: "Technology Support",
-    },
-    {
-      title: "Offer Consultancy and skilled Society Manager",
-    },
-    {
-      title: "Ensure Essential Services, maintaining Stakeholder morale",
-    },
-    {
-      title: "Tailored , Flexible solution for unique society needs",
-    },
-    {
-      title: "Trained Ground Level Team",
+      desc: "",
+      icon: <FaHeadphones size={50} />,
     },
   ];
   // -------------------------------------------------------------------------------------------------
   // -------------------------------------------functions---------------------------------------------
   const PowerfulFeaturesCard = ({ power }) => {
     return (
-      <div class="mx-auto w-full">
-        <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-            <svg
-              class="w-8 h-8 text-purple-600"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75H15.25C16.3546 4.75 17.25 5.64543 17.25 6.75V19.25L12 14.75L6.75 19.25V6.75Z"
-              ></path>
-            </svg>
-            <div class="space-y-2 flex items-center">
-              <p class="text-slate-800 font-bold">{power.title}</p>
+      <>
+        <div class="card">
+          <div class="face back">
+            <div class="content">
+              <span class="stars"></span>
+              <b class="desc">{power.title}</b>
             </div>
           </div>
+          <div class="face front">{power.icon}</div>
         </div>
-      </div>
+      </>
     );
   };
   // -----------------------------------------------------------------------------------------------
 
   return (
     <>
-      <div class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10 ">
+      <div class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-5 ">
         <img
           src={build3Img}
           alt="Banner Image"
           class="absolute inset-0 w-full h-full object-cover opacity-60"
         />
-        <div class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
+        <div class="min-h-[300px] relative z-5 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-5">
           <h2 class="sm:text-4xl md:text-5xl text-2xl font-bold mb-6 italic">
             Powerful Features of Tickboxes
           </h2>
+          <div className="flex flex-wrap gap-20">
+            {powerfulFeaturesData.map((power) => {
+              return <PowerfulFeaturesCard power={power} />;
+            })}
+          </div>
         </div>
       </div>
     </>
