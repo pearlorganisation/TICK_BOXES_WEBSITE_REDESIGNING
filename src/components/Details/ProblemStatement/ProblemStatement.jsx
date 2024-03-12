@@ -77,13 +77,13 @@ const ProblemStatement = () => {
 
   return (
     <>
-      <div class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
+      <div class="relative font-[sans-serif] before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-5">
         <img
           src="https://readymadeui.com/cardImg.webp"
           alt="Banner Image"
           class="absolute inset-0 w-full h-full object-cover opacity-70"
         />
-        <div class="min-h-[300px] relative z-50 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
+        <div class="min-h-[300px] relative z-5 h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
           <h2 class="sm:text-4xl md:text-5xl text-2xl font-bold mb-6">
             Problem Faced By Societies
           </h2>
