@@ -85,46 +85,38 @@ const AboutUs = () => {
                   Comprehensive Support
                 </span>
               </div>
-
-              <div className="flex flex-col items-start gap-x-3 sm:text-sm">
-                {aboutUsDetailsObj.map((item) => {
-                  return (
-                    <Link
-                      to={{
-                        pathname: item.url,
-                        state: { detailField: item?.field || "" },
-                      }}
-                      className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white m-1 border-gray-400"
-                    >
-                      <span className="inline-block rounded-full px-3 py-1 bg-indigo-600 text-white">
-                        Also
-                      </span>
-                      <p className="flex items-center">
-                        {item.title}
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="w-5 h-5"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </p>
-                    </Link>
-                  );
-                })}
-              </div>
             </div>
-            <div className="flex-1 hidden md:block">
-              {/* Replace with your image */}
-              <img
-                src="https://raw.githubusercontent.com/sidiDev/remote-assets/c86a7ae02ac188442548f510b5393c04140515d7/undraw_progressive_app_m-9-ms_oftfv5.svg"
-                className="max-w-xl"
-              />
+            <div className="grid grid-col-1 items-start gap-1 sm:text-sm mt-8 sm:mt-8 md:mt-0">
+              {aboutUsDetailsObj.map((item) => {
+                return (
+                  <Link
+                    to={{
+                      pathname: item.url,
+                      state: { detailField: item?.field || "" },
+                    }}
+                    className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white m-1 border-gray-400"
+                  >
+                    <span className="inline-block rounded-full px-3 py-1 bg-indigo-600 text-white">
+                      Also
+                    </span>
+                    <p className="flex items-center">
+                      {item.title}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-5 h-5"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </p>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

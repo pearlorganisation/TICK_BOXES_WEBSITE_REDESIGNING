@@ -31,46 +31,48 @@ const Details = () => {
   };
 
   useEffect(() => {
-    if (detailField) {
-      detailObj[detailField];
-    }
+    powerfulFeaturesRef.current.click();
   }, []);
   // -------------------------------------------useEffect-----------------------------------------------------
   // -------------------------------------------------------------------------------------------------------
   return (
     <>
-      <Link
-        to="what_we_do"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={whatWeDoRef}
-      />
-      <Link
-        to="problem_statement"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={problemStatementRef}
-      />
-      <Link
-        to="how_we_do"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={howWeDoRef}
-      />
-      <Link
-        to="powerful_features"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={powerfulFeaturesRef}
-      />
+      <div ref={whatWeDoRef}>
+        <Link
+          to="what_we_do"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={problemStatementRef}>
+        <Link
+          to="problem_statement"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={howWeDoRef}>
+        <Link
+          to="how_we_do"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={powerfulFeaturesRef}>
+        <Link
+          to="powerful_features"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
 
       <Element name="what_we_do">
         <WhatWeDo />
