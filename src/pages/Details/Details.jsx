@@ -24,53 +24,57 @@ const Details = () => {
   const powerfulFeaturesRef = useRef();
 
   let detailObj = {
-    what_we_do: whatWeDoRef?.current?.click(),
-    problem_statement: problemStatementRef?.current?.click(),
-    how_we_do: howWeDoRef?.current?.click(),
-    powerful_features: powerfulFeaturesRef?.current?.click(),
+    what_we_do: whatWeDoRef?.current?.click,
+    problem_statement: problemStatementRef?.current?.click,
+    how_we_do: howWeDoRef?.current?.click,
+    powerful_features: powerfulFeaturesRef?.current?.click,
   };
 
   useEffect(() => {
-    if (detailField) {
-      detailObj[detailField];
-    }
+    // detailObj[detailField];
+    powerfulFeaturesRef.current.scrollIntoView({ behaviour: "smooth" });
   }, []);
+
   // -------------------------------------------useEffect-----------------------------------------------------
   // -------------------------------------------------------------------------------------------------------
   return (
     <>
-      <Link
-        to="what_we_do"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={whatWeDoRef}
-      />
-      <Link
-        to="problem_statement"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={problemStatementRef}
-      />
-      <Link
-        to="how_we_do"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={howWeDoRef}
-      />
-      <Link
-        to="powerful_features"
-        spy={true}
-        smooth={true}
-        offset={50}
-        duration={500}
-        ref={powerfulFeaturesRef}
-      />
+      <div ref={whatWeDoRef}>
+        <Link
+          to="what_we_do"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={problemStatementRef}>
+        <Link
+          to="problem_statement"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={howWeDoRef}>
+        <Link
+          to="how_we_do"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
+      <div ref={powerfulFeaturesRef}>
+        <Link
+          to="powerful_features"
+          spy={true}
+          smooth={true}
+          offset={50}
+          duration={500}
+        />
+      </div>
 
       <Element name="what_we_do">
         <WhatWeDo />
