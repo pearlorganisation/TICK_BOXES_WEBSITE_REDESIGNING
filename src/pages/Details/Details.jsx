@@ -24,15 +24,17 @@ const Details = () => {
   const powerfulFeaturesRef = useRef();
 
   let detailObj = {
-    what_we_do: whatWeDoRef?.current?.click(),
-    problem_statement: problemStatementRef?.current?.click(),
-    how_we_do: howWeDoRef?.current?.click(),
-    powerful_features: powerfulFeaturesRef?.current?.click(),
+    what_we_do: whatWeDoRef?.current?.click,
+    problem_statement: problemStatementRef?.current?.click,
+    how_we_do: howWeDoRef?.current?.click,
+    powerful_features: powerfulFeaturesRef?.current?.click,
   };
 
   useEffect(() => {
-    powerfulFeaturesRef.current.click();
+    // detailObj[detailField];
+    powerfulFeaturesRef.current.scrollIntoView({ behaviour: "smooth" });
   }, []);
+
   // -------------------------------------------useEffect-----------------------------------------------------
   // -------------------------------------------------------------------------------------------------------
   return (
