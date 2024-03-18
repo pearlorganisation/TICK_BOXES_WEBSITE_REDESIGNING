@@ -10,19 +10,17 @@ const GeneralInfo = () => {
   // -----------------------------------------------States------------------------------------------------
   const generalInfoObj = [
     {
-      title: "25,000+",
+      title: "25+",
       desc: "societies",
       icon: <BiHomeAlt2 className="text-red-500 md:text-6xl text-6xl " />,
     },
     {
-      title: "3.5 million+",
+      title: "1000+",
       desc: "homes",
-      icon: (
-        <TiUserOutline className="text-orange-400 md:text-6xl text-6xl " />
-      ),
+      icon: <TiUserOutline className="text-orange-400 md:text-6xl text-6xl " />,
     },
     {
-      title: "27 major",
+      title: "1 major",
       desc: "cities",
       icon: (
         <MdOutlineLocationOn className="text-green-400 md:text-6xl text-6xl " />
@@ -40,8 +38,12 @@ const GeneralInfo = () => {
           {icon}
         </div>
         <div className="rightInfo p-3">
-          <h1 className="md:text-2xl sm:text-2xl text-3xl font-bold text-center md:text-start bg-gradient-to-r from-[#EA4021] via-[#F5D103] to-[#71B744] text-transparent bg-clip-text">{title}</h1>
-          <h4 className="md:text-xl sm:text-xl text-xl text-center md:text-start bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text  font-extrabold text-transparent">{desc}</h4>
+          <h1 className=" text-whitemd:text-2xl sm:text-2xl text-3xl font-bold text-center md:text-start bg-gradient-to-r text-white text-transparent bg-clip-text">
+            {title}
+          </h1>
+          <h4 className="text-white md:text-xl sm:text-xl text-xl text-center md:text-start bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text  font-extrabold text-transparent">
+            {desc}
+          </h4>
         </div>
       </div>
     );
@@ -51,7 +53,7 @@ const GeneralInfo = () => {
   // -----------------------------------------------------------------------------------------------------
 
   return (
-    <div className="w-full bg-fuchsia-300/30 grid sm:grid-cols-3 py-16 ">
+    <div className="w-full bg-[rgb(255,_134,_13)] grid sm:grid-cols-3 py-16 ">
       {generalInfoObj.map((info) => {
         return (
           <GeneralInfoCard
