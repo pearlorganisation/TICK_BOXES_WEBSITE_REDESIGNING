@@ -90,7 +90,7 @@ const AboutUs = () => {
             <div className="grid grid-col-1 items-start gap-1 sm:text-sm mt-8 sm:mt-8 md:mt-0">
               {aboutUsDetailsObj.map((item) => {
                 return (
-                  <div
+                  <button
                     onClick={() => {
                       navigate(item.url, {
                         state: { detailField: item?.field },
@@ -116,7 +116,7 @@ const AboutUs = () => {
                         />
                       </svg>
                     </p>
-                  </div>
+                  </button>
                 );
               })}
             </div>
