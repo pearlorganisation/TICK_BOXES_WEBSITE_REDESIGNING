@@ -4,19 +4,18 @@ import WhatWeDo from "../../components/Details/WhatWeDo/WhatWeDo";
 import ProblemStatement from "../../components/Details/ProblemStatement/ProblemStatement";
 import HowWeDo from "../../components/Details/HowWeDo/HowWeDo";
 import PowerfulFeatures from "../../components/Details/PowerfulFeatures/PowerfulFeatures";
-import { Link, Element } from "react-scroll";
 import { useLocation } from "react-router-dom";
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
 
-const Details = () => {
+const Details = (props) => {
   // ----------------------------------------------States-----------------------------------------------------
   // -------------------------------------------------------------------------------------------------------
   // ----------------------------------------------Hooks-----------------------------------------------------
 
   const location = useLocation();
-  const detailField = location?.state?.detailField || "what_we_do";
+  const detailField = location?.state?.detailField;
 
   const whatWeDoRef = useRef();
   const problemStatementRef = useRef();
@@ -24,70 +23,52 @@ const Details = () => {
   const powerfulFeaturesRef = useRef();
 
   let detailObj = {
-    what_we_do: whatWeDoRef?.current?.click,
-    problem_statement: problemStatementRef?.current?.click,
-    how_we_do: howWeDoRef?.current?.click,
-    powerful_features: powerfulFeaturesRef?.current?.click,
+    what_we_do: () => {
+      whatWeDoRef?.current?.click();
+    },
+    problem_statement: () => {
+      problemStatementRef?.current?.click();
+    },
+    how_we_do: () => {
+      howWeDoRef?.current?.click();
+    },
+    powerful_features: () => {
+      powerfulFeaturesRef?.current?.click();
+    },
   };
 
   useEffect(() => {
-    // detailObj[detailField];
-    powerfulFeaturesRef.current.scrollIntoView({ behaviour: "smooth" });
-  }, []);
+    if (detailField) {
+      console.log("this is location", detailField);
+      // alert("detailfield",detailField);
+      const func = detailObj[detailField];
+      console.log("this is func", func);
+      func();
+      // alert(func);
+    }
+  }, [detailField]);
 
   // -------------------------------------------useEffect-----------------------------------------------------
   // -------------------------------------------------------------------------------------------------------
   return (
     <>
-      <div ref={whatWeDoRef}>
-        <Link
-          to="what_we_do"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        />
-      </div>
-      <div ref={problemStatementRef}>
-        <Link
-          to="problem_statement"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        />
-      </div>
-      <div ref={howWeDoRef}>
-        <Link
-          to="how_we_do"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        />
-      </div>
-      <div ref={powerfulFeaturesRef}>
-        <Link
-          to="powerful_features"
-          spy={true}
-          smooth={true}
-          offset={50}
-          duration={500}
-        />
-      </div>
+      <a href={"#what_we_do"} ref={whatWeDoRef} />
+      <a href={"#problem_statement"} ref={problemStatementRef} />
+      <a href={"#how_we_do"} ref={howWeDoRef} />
+      <a href={"#powerful_features"} ref={powerfulFeaturesRef} />
 
-      <Element name="what_we_do">
+      <div id="what_we_do">
         <WhatWeDo />
-      </Element>
-      <Element name="problem_statement">
+      </div>
+      <div id="problem_statement">
         <ProblemStatement />
-      </Element>
-      <Element name="how_we_do">
+      </div>
+      <div id="how_we_do">
         <HowWeDo />
-      </Element>
-      <Element name="powerful_features">
+      </div>
+      <div id="powerful_features">
         <PowerfulFeatures />
-      </Element>
+      </div>
     </>
   );
 };

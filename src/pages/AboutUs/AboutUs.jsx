@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
   // ----------------------------------------------States-------------------------------------------------
@@ -35,6 +35,7 @@ const AboutUs = () => {
   // -----------------------------------------------------------------------------------------------------
 
   // ----------------------------------------------Hooks-------------------------------------------------
+  const navigate = useNavigate();
   // -----------------------------------------------------------------------------------------------------
   // --------------------------------------------Functions-------------------------------------------------
   // -----------------------------------------------------------------------------------------------------
@@ -45,10 +46,10 @@ const AboutUs = () => {
   return (
     <div className="relative">
       <div
-        className="absolute inset-0 blur-xl h-[580px]"
+        className="absolute inset-0 blur-xl h-[580px] "
         style={{
           background:
-            "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)",
+            "radial-gradient(circle at 10% 20%, rgb(255, 252, 214) 10%, rgba(255, 134, 13, 0.55) 90%)",
         }}
       ></div>
       <div className="relative">
@@ -72,16 +73,16 @@ const AboutUs = () => {
               </p>
               <h3 className="text-xl font-bold text-black">Key Features -</h3>
               <div className="keyFeaturesTag mt-1 flex gap-2 flex-wrap">
-                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                <span className=" rounded-2xl p-2 bg-[rgb(255,_134,_13)] text-white font-bold">
                   Flexible Offerings
                 </span>
-                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                <span className=" rounded-2xl p-2 bg-[rgb(255,_134,_13)] text-white font-bold">
                   Expert Assistance
                 </span>
-                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                <span className=" rounded-2xl p-2 bg-[rgb(255,_134,_13)] text-white font-bold">
                   Customized Services
                 </span>
-                <span className=" rounded-2xl p-2 bg-blue-900 text-white font-bold">
+                <span className=" rounded-2xl p-2 bg-[rgb(255,_134,_13)] text-white font-bold">
                   Comprehensive Support
                 </span>
               </div>
@@ -89,17 +90,18 @@ const AboutUs = () => {
             <div className="grid grid-col-1 items-start gap-1 sm:text-sm mt-8 sm:mt-8 md:mt-0">
               {aboutUsDetailsObj.map((item) => {
                 return (
-                  <Link
-                    to={{
-                      pathname: item.url,
-                      state: { detailField: item?.field || "" },
+                  <div
+                    onClick={() => {
+                      navigate(item.url, {
+                        state: { detailField: item?.field },
+                      });
                     }}
                     className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white m-1 border-gray-400"
                   >
-                    <span className="inline-block rounded-full px-3 py-1 bg-indigo-600 text-white">
+                    <span className="inline-block rounded-full px-3 py-1 bg-[rgb(255,_134,_13)] text-white">
                       Also
                     </span>
-                    <p className="flex items-center">
+                    <p className="flex items-center font-bold">
                       {item.title}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +116,7 @@ const AboutUs = () => {
                         />
                       </svg>
                     </p>
-                  </Link>
+                  </div>
                 );
               })}
             </div>
