@@ -24,7 +24,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Banking Transactions to be done by manager",
+      d1: "Banking Transactions",
       d2: "Yes",
       d3: "Yes",
       d4: "Yes",
@@ -128,7 +128,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Manage, Monitor & Resolve Complaints of Member",
+      d1: "Resolve Complaints of Members",
       d2: "No",
       d3: "No",
       d4: "Yes",
@@ -176,7 +176,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Verification of Flat Transfer Document from Legal Team",
+      d1: "Flat Document Verification",
       d2: "No",
       d3: "No",
       d4: "No",
@@ -224,7 +224,7 @@ const Services = () => {
 
   const subContentData4 = [
     {
-      d1: "Society Maintenance Bill Generation - Quarterly",
+      d1: "Maintenance Bill Generation",
       d2: "Society",
       d3: "Society",
       d4: "Society",
@@ -320,16 +320,16 @@ const Services = () => {
   // ------------------------------------------------------------------------------------------------------
 
   return (
-    <div className="servicesContainer w-screen p-10">
+    <div className="servicesContainer w-full p-10">
       <div className="servicesMain w-[100%]">
         <div className="w-[100%] sticky top-20">
           <div className="servicesCardWrapper w-[100%]  flex bg-gradient-to-r from-violet-200 to-pink-200">
-            <div className="serviceCard w-[30%] p-10 flex flex-col justify-center ">
-              <p className="title font-bold text-2xl">
-                Not sure which plan is for you?
+            <div className="serviceCard w-[30%] p-1 sm:p-10 flex flex-col justify-center ">
+              <p className="title font-bold text-[16px] sm:text-xl md:text-2xl text-center">
+                Plans For You
               </p>
               <div className="buyNowBtn w-[100%]">
-                <button className="border w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3">
+                <button className="border text-[12px] sm:text-[16px] md:text-[20px] w-[100%] border-black text-center bg-black text-white font-bold p-3 rounded-full mt-3 hidden sm:block">
                   Our Plans
                 </button>
               </div>
