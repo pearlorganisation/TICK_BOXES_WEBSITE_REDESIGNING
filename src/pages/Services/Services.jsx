@@ -24,7 +24,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Banking Transactions to be done by manager",
+      d1: "Banking Transactions",
       d2: "Yes",
       d3: "Yes",
       d4: "Yes",
@@ -128,7 +128,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Manage, Monitor & Resolve Complaints of Member",
+      d1: "Resolve Complaints of Members",
       d2: "No",
       d3: "No",
       d4: "Yes",
@@ -176,7 +176,7 @@ const Services = () => {
       d6: "Yes",
     },
     {
-      d1: "Verification of Flat Transfer Document from Legal Team",
+      d1: "Flat Document Verification",
       d2: "No",
       d3: "No",
       d4: "No",
@@ -224,7 +224,7 @@ const Services = () => {
 
   const subContentData4 = [
     {
-      d1: "Society Maintenance Bill Generation - Quarterly",
+      d1: "Maintenance Bill Generation",
       d2: "Society",
       d3: "Society",
       d4: "Society",

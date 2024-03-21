@@ -9,7 +9,7 @@ const SubContentWrapper = ({ index, subData,first }) => {
             index % 2 == 0 ? "bg-gray-200" : "bg-white"
           }`}
         >
-          <p className='italic font-bold text-blue-600 text-[11px]'>{subData.d1}</p>
+          <p className='italic font-bold text-blue-600 text-[14px]'>{subData.d1}</p>
         </div>
         {Array(5)
           .fill(0)
