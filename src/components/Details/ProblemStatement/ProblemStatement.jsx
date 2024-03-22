@@ -61,10 +61,10 @@ const ProblemStatement = () => {
             {problem.icon}
           </div>
           <div class="mt-8">
-            <p class="text-xl font-semibold my-2 text-center h-[50px]">
+            <p class="text-xl font-semibold my-2 text-center h-[50px] flex items-center justify-center">
               {problem.title}
             </p>
-            <p className="text-sm text-center h-[62px]">{problem.desc}</p>
+            <p className="text-sm text-center h-[62px] flex items-center justify-center">{problem.desc}</p>
             <div class="border-t-2"></div>
           </div>
         </div>
