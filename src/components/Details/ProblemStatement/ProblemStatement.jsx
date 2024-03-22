@@ -56,15 +56,15 @@ const ProblemStatement = () => {
   const ProblemCard = ({ problem }) => {
     return (
       <div class="flex items-center justify-center">
-        <div class="relative bg-white py-6 px-6 rounded-3xl w-64 my-4 shadow-xl">
+        <div class="relative bg-white py-6 px-6 rounded-3xl my-4 shadow-xl border border-red-500 w-[250px] h-[200px]">
           <div class=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-pink-500 left-4 -top-6">
             {problem.icon}
           </div>
           <div class="mt-8">
-            <p class="text-xl font-semibold my-2 text-center">
+            <p class="text-xl font-semibold my-2 text-center h-[50px]">
               {problem.title}
             </p>
-            <p className="text-sm text-center">{problem.desc}</p>
+            <p className="text-sm text-center h-[62px]">{problem.desc}</p>
             <div class="border-t-2"></div>
           </div>
         </div>
