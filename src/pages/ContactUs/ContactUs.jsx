@@ -1,6 +1,50 @@
-import React from "react";
+// -----------------------------------------------Imports----------------------------------------------
+import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+import { Comment } from "react-loader-spinner";
+// -----------------------------------------------------------------------------------------------------
 
 const ContactUs = () => {
+  // -----------------------------------------------States-----------------------------------------------
+
+  // -----------------------------------------------------------------------------------------------------
+  // -----------------------------------------------Hooks-----------------------------------------------
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const [loading, setLoading] = useState(false);
+  // -----------------------------------------------------------------------------------------------------
+  // ---------------------------------------------Functions-----------------------------------------------
+
+  const contactFormSubmitHandler = async (data) => {
+    try {
+      setLoading(true);
+      await emailjs.send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        data
+      );
+      setLoading(false);
+      toast.success("Email Sent Successfully");
+      reset();
+    } catch (error) {
+      setLoading(false);
+      toast.error(error.message);
+    }
+  };
+  // -----------------------------------------------------------------------------------------------------
+  // ----------------------------------------------useEffect-----------------------------------------------
+  useEffect(() => {
+    emailjs.init(import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY);
+  }, []);
+  // -----------------------------------------------------------------------------------------------------
+
   return (
     <div class="p-8">
       <div class="max-w-6xl mx-auto bg-[#2e0249] rounded-lg">
@@ -117,48 +161,133 @@ const ContactUs = () => {
             </ul>
           </div>
           <div class="bg-gray-200 p-6 rounded-lg">
-            <form class="mt-8 space-y-4">
-              <input
-                type="text"
-                placeholder="Name"
-                class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
-              />
-              <input
-                type="text"
-                placeholder="Subject"
-                class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
-              />
-              <textarea
-                placeholder="Message"
-                rows="6"
-                class="w-full rounded-md px-4 text-sm pt-3 outline-[#a91079]"
-              ></textarea>
-              <button
-                type="button"
-                class="text-white bg-[#a91079] hover:bg-[#a91079e2] font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16px"
-                  height="16px"
-                  fill="#fff"
-                  class="mr-2"
-                  viewBox="0 0 548.244 548.244"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
-                    clip-rule="evenodd"
-                    data-original="#000000"
+            <form
+              class="mt-8 space-y-4"
+              onSubmit={handleSubmit(contactFormSubmitHandler)}
+            >
+              {loading ? (
+                <div className="p-20 m-10 h-[50vh] flex justify-center items-center">
+                  <Comment
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="comment-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="comment-wrapper"
+                    color="#fff"
+                    backgroundColor="#F4442E"
                   />
-                </svg>
-                Send Message
-              </button>
+                </div>
+              ) : (
+                <>
+                  <input
+                    {...register("name", {
+                      required: {
+                        value: true,
+                        message: "Name is a required field",
+                      },
+                    })}
+                    type="text"
+                    placeholder="Name"
+                    class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
+                  />
+                  {errors.name && (
+                    <p className="pl-2 text-red-600">{errors.name.message}</p>
+                  )}
+                  <input
+                    {...register("email", {
+                      required: {
+                        value: true,
+                        message: "Email is a required field",
+                      },
+                    })}
+                    type="email"
+                    placeholder="Email"
+                    class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
+                  />
+                  {errors.email && (
+                    <p className="pl-2 text-red-600">{errors.email.message}</p>
+                  )}
+                  <input
+                    {...register("phoneNumber", {
+                      required: {
+                        value: true,
+                        message: "Whatsapp Phone Number is a required field",
+                      },
+                      maxLength: 10,
+                    })}
+                    type="number"
+                    placeholder="Whatsapp Number"
+                    class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
+                  />
+                  {errors?.phoneNumber &&
+                  errors?.phoneNumber?.type === "required" ? (
+                    <p className="pl-2 text-red-600">
+                      {errors.phoneNumber.message}
+                    </p>
+                  ) : (
+                    errors?.phoneNumber?.type === "maxLength" && (
+                      <p className="pl-2 text-red-600">
+                        Max 10 digits are allowed
+                      </p>
+                    )
+                  )}
+
+                  <input
+                    {...register("subject", {
+                      required: {
+                        value: true,
+                        message: "Subject is a required field",
+                      },
+                    })}
+                    type="text"
+                    placeholder="Subject"
+                    class="w-full rounded-md py-3 px-4 text-sm outline-[#a91079]"
+                  />
+                  {errors.subject && (
+                    <p className="pl-2 text-red-600">
+                      {errors.subject.message}
+                    </p>
+                  )}
+                  <textarea
+                    {...register("message", {
+                      required: {
+                        value: true,
+                        message: "Message is a required field",
+                      },
+                    })}
+                    placeholder="Message"
+                    rows="6"
+                    class="w-full rounded-md px-4 text-sm pt-3 outline-[#a91079]"
+                  ></textarea>
+                  {errors.message && (
+                    <p className="pl-2 text-red-600">
+                      {errors.message.message}
+                    </p>
+                  )}
+                  <button
+                    type="submit"
+                    class="text-white bg-[#a91079] hover:bg-[#a91079e2] font-semibold rounded-md text-sm px-4 py-3 flex items-center justify-center w-full"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16px"
+                      height="16px"
+                      fill="#fff"
+                      class="mr-2"
+                      viewBox="0 0 548.244 548.244"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                        clip-rule="evenodd"
+                        data-original="#000000"
+                      />
+                    </svg>
+                    Send Message
+                  </button>
+                </>
+              )}
             </form>
           </div>
         </div>
