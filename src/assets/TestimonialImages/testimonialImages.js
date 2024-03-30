@@ -8,7 +8,7 @@ import testImg6 from "./test606 - Radhakrishna Amin - RNA Continental - Treasure
 import testImg7 from "./test708 - Pankaj Kanal - Balaji Infotech.png";
 import testImg8 from "./test809 - Bhadresh Panchal - Chintamani Plaza - Chairman.png";
 import testImg9 from "./test910 - Surendran Nair - Sunmoon CHSL - Chairman.png";
-import testImg10 from "./test1011 - Prem Khanduri - White Spring A Wing.jpg";
+import testImg10 from "./test1011 - Prem Khanduri - White Spring A Wing.jpeg";
 import testImg11 from "./test1112 - Peter Baptista - Anchorage CHSL - Chairman.png";
 // -----------------------------------------------------------------------------------------------------------
 
