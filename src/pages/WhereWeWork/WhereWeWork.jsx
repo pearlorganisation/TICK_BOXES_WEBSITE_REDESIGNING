@@ -1,12 +1,17 @@
 // ------------------------------------------------Imports--------------------------------------------------
-import React from "react";
+import React, { useState } from "react";
 import WhereWeWorkCard from "../../components/Cards/WhereWeWorkCard/WhereWeWorkCard";
 import { whereWeWorkImages } from "../../assets/WhereWeWorkImages/whereWeWorkImages";
 import buildingImg from "../../assets/buildingImg.jpg";
 import styles from "./styles.module.css";
+import WhereWeWorkModal from "../../components/Modals/WhereWeWorkModal/WhereWeWorkModal";
+import { createPortal } from "react-dom";
 // ----------------------------------------------------------------------------------------------------------
 
 const WhereWeWork = () => {
+  const [openModal, setOpenModal] = useState(false);
+  const [currentImage, setCurrentImage] = useState("");
+
   return (
     <>
       <div className="topContent">
@@ -35,12 +40,23 @@ const WhereWeWork = () => {
                     title={val.title}
                     desc={val.desc}
                     members={val.members}
+                    setOpenModal={setOpenModal}
+                    setCurrentImage={setCurrentImage}
                   />
                 );
               })}
           </div>
         </div>
       </div>
+      {openModal &&
+        createPortal(
+          <WhereWeWorkModal
+            openModal={openModal}
+            setOpenModal={setOpenModal}
+            currentImage={currentImage}
+          />,
+          document.body
+        )}
     </>
   );
 };
